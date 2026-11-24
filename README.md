@@ -6,6 +6,10 @@
 [![Zero Cloud Egress](https://img.shields.io/badge/Network-100%25%20Offline-success.svg)](#executive-summary--value-proposition)
 [![Hallucination Rate](https://img.shields.io/badge/Hallucination%20Rate-0%25%20(Four--Valued%20Logic)-blueviolet.svg)](#four-valued-logic-architecture)
 
+<p align="center">
+  <img src="assets/latency-comparison.png" alt="Decision Latency Benchmark Comparison: FlareMind 0.88ms vs Cloud LLM 7,200ms" width="100%">
+</p>
+
 FlareMind is a high-performance, deterministic decision engine purpose-built for mission-critical edge computing. It evaluates multi-variable business and safety constraints in **under 0.5 milliseconds** on standard, commodity single-core CPUs. Operating entirely offline with four-valued mathematical logic, FlareMind delivers verifiable, audit-ready decisions with zero data egress, zero token costs, and zero hallucinations.
 
 This repository serves as a **public demonstration package** showcasing the product's verified capabilities, interactive industry scenarios, and published benchmark performance. It strictly excludes proprietary solver source code, private algorithms, rule definitions, and confidential client data.
