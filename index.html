@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FlareMind Public Demo</title>
+  <meta name="description" content="A static public demo of FlareMind: deterministic, offline decision effects and published results." />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#top">
+      <img src="assets/favicon.svg" alt="" aria-hidden="true" />
+      <span>FlareMind Public Demo</span>
+    </a>
+    <span class="tag">Static demonstration · no production engine</span>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div>
+        <p class="kicker">Deterministic decision engineering</p>
+        <h1>Small runtime. Clear decisions. Traceable evidence.</h1>
+        <p class="lead">FlareMind is presented here through public effects only. The static page explains how an offline decision engine behaves at the edge, without showing implementation details.</p>
+        <div class="pill-row">
+          <span>Offline by default</span>
+          <span>Four decision states</span>
+          <span>Evidence trace</span>
+          <span>Common CPU runtime</span>
+        </div>
+      </div>
+      <img class="hero-flow" src="assets/hero-flow.svg" alt="Facts and rules enter a decision check and produce a traceable result." />
+    </section>
+
+    <section id="decision">
+      <div class="section-head">
+        <p class="kicker">Decision states</p>
+        <h2>One of four outcomes, with a stated reason.</h2>
+        <p class="note">This demo uses fixed examples. It does not run inference.</p>
+      </div>
+      <div class="state-grid" role="group" aria-label="Decision states">
+        <button class="state-button" data-state="trusted" type="button">Trusted</button>
+        <button class="state-button" data-state="undetermined" type="button">Undetermined</button>
+        <button class="state-button" data-state="refuted" type="button">Refuted</button>
+        <button class="state-button" data-state="inconsistent" type="button">Inconsistent</button>
+      </div>
+      <div class="result-card">
+        <p class="result-status" id="decision-status">Trusted</p>
+        <h3 id="decision-summary">The supplied facts pass the published rule check.</h3>
+        <p class="evidence" id="decision-evidence">Evidence: matching facts are present and consistent.</p>
+      </div>
+    </section>
+
+    <section id="constraints">
+      <div class="section-head">
+        <p class="kicker">Constraint simulation</p>
+        <h2>Business scale and device count.</h2>
+        <p class="note">Move the two controls. The result shows a public feasibility snapshot.</p>
+      </div>
+      <div class="slider-grid">
+        <label>
+          <span class="slider-label">Business scale <em>records</em></span>
+          <input id="scale" type="range" min="10000" max="500000" step="10000" value="180000" />
+          <output id="scale-value" for="scale">180,000</output>
+        </label>
+        <label>
+          <span class="slider-label">Device count <em>units</em></span>
+          <input id="devices" type="range" min="1" max="20" step="1" value="8" />
+          <output id="devices-value" for="devices">8 units</output>
+        </label>
+      </div>
+      <div class="result-card">
+        <p class="result-status" id="constraint-status">Feasible plan</p>
+        <h3 id="constraint-summary">A feasible plan is available under these public snapshot limits.</h3>
+      </div>
+    </section>
+
+    <section id="integration">
+      <div class="section-head">
+        <p class="kicker">Integration paths</p>
+        <h2>Local engine or cloud call.</h2>
+      </div>
+      <div class="mode-grid" role="group" aria-label="Integration paths">
+        <button class="mode-button" data-mode="local" type="button">Local engine</button>
+        <button class="mode-button" data-mode="cloud" type="button">Cloud call</button>
+      </div>
+      <div class="mode-card">
+        <h3 id="mode-title">Local engine</h3>
+        <dl>
+          <div><dt>Network</dt><dd id="mode-network">Not required</dd></div>
+          <div><dt>Data location</dt><dd id="mode-data">On the edge device</dd></div>
+          <div><dt>Call path</dt><dd id="mode-path">Local call inside the system</dd></div>
+          <div><dt>Cost focus</dt><dd id="mode-cost">Device resource use</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section id="benchmark">
+      <div class="section-head">
+        <p class="kicker">Published readings</p>
+        <h2>Public benchmark view.</h2>
+        <p class="note">Four published sample sizes. No new values are produced here.</p>
+      </div>
+      <div class="mode-grid" role="group" aria-label="Benchmark metric">
+        <button class="mode-button" data-metric="cpu" type="button">Average time</button>
+        <button class="mode-button" data-metric="qps" type="button">Throughput</button>
+      </div>
+      <div class="chart" id="chart" aria-label="Public benchmark bars"></div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Sample size</th><th>Average time (ms)</th><th>Throughput (queries/s)</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>100</td><td>0.475</td><td>2,103</td></tr>
+            <tr><td>1,000</td><td>0.474</td><td>2,109</td></tr>
+            <tr><td>10,000</td><td>0.515</td><td>1,941</td></tr>
+            <tr><td>50,000</td><td>0.444</td><td>2,254</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="scenarios">
+      <div class="section-head">
+        <p class="kicker">Application scenarios</p>
+        <h2>Where the public story applies.</h2>
+      </div>
+      <div class="card-grid">
+        <article><span>01</span><h3>Production line release</h3><p>Check the release path against supplied facts and rules.</p></article>
+        <article><span>02</span><h3>Document verification</h3><p>Check document facts before the next workflow step.</p></article>
+        <article><span>03</span><h3>Medical order verification</h3><p>Check order facts and give a traceable result.</p></article>
+        <article><span>04</span><h3>Role behavior checks</h3><p>Check behavior facts against defined role rules.</p></article>
+        <article><span>05</span><h3>Design rule checks</h3><p>Check design facts against defined rule sets.</p></article>
+        <article><span>06</span><h3>And more</h3><p>Apply the same public decision pattern to similar checks.</p></article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>This is a public static demo. It contains no production engine, no hidden technical detail, and no private data.</p>
+    <p><a href="RESULTS.md">Run results</a> · <a href="docs/public-claims.md">Public claims</a> · <a href="docs/demo-guide.md">Demo guide</a></p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
